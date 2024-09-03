@@ -1,3 +1,5 @@
+Le but est d'implémenter uniquement des tests unitaires et instrumentés sur l'application existante.
+
 ## Projet CRM Android
 
 Ce projet est une application Android de gestion de la relation client (CRM) pour l'entreprise Relayance. Elle permet à l'entreprise de suivre efficacement le flux de travail des commerciaux concernant les propositions commerciales et de favoriser les retours de la direction.
