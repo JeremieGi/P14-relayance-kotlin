@@ -43,6 +43,7 @@ class ClickFirstElementIntentTest {
 
         // Vérifiez que l'Intent a été généré
         intended( hasComponent(DetailActivity::class.java.name) )
+
         // avec l'ID client
         intended(hasExtraWithKey(DetailActivity.EXTRA_CUSTOMER_ID))
 
