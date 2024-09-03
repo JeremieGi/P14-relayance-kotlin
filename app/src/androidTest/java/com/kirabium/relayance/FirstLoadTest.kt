@@ -28,5 +28,3 @@ class FirstLoadTest {
     }
 
 }
-
-// TODO denis : L'ajout de client n'est pas implémenté. Je le code pour le tester ?

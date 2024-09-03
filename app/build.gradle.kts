@@ -49,6 +49,7 @@ android {
         debug {
             enableAndroidTestCoverage = true
             enableUnitTestCoverage = true
+            isTestCoverageEnabled = true // permet la collecte des données de couverture lors de l'exécution des test
         }
     }
     compileOptions {

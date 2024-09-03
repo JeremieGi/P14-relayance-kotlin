@@ -8,6 +8,11 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
+// TODO Denis : Je n'ai pas la possibilité de lancer les tests instrumentés directement depuis l'arborescence de droite (comme avec les tests unitaires)
+// => J'ai du créé une configuration dédiée "Tests with Coverage"
+
+// TODO Denis : Pour les rendus, il est demandé un fichier html (compte-rendu de test) mais il faut tous les fichiers liés
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
