@@ -9,8 +9,10 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasExtraWithKey
 import androidx.test.espresso.intent.rule.IntentsRule
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.kirabium.relayance.ui.activity.DetailActivity
+import com.kirabium.relayance.ui.activity.MainActivity
 import com.kirabium.relayance.util.RecyclerViewItemCountAssertion
 import org.junit.Rule
 import org.junit.Test
@@ -22,8 +24,8 @@ class ClickFirstElementIntentTest {
     // Doc : https://developer.android.com/training/testing/espresso/intents?hl=fr#kotlin
 
     // Lancement de l'activité principale en début de test
-    //@get:Rule
-    //var activityTest = ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule
+    var activityTest = ActivityScenarioRule(MainActivity::class.java)
 
     // Ajoutez explicitement IntentsRule à vos tests pour assurer une configuration correcte et une libération des ressources.
     @get:Rule
