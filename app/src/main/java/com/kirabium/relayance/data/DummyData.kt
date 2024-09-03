@@ -4,8 +4,6 @@ import com.kirabium.relayance.domain.model.Customer
 import java.util.Calendar
 import java.util.Date
 
-// On devrait faire un vrai repository ici avant de faire des tests
-
 object DummyData {
 
     /**
