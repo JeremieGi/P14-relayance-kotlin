@@ -4,10 +4,14 @@ import com.kirabium.relayance.domain.model.Customer
 import java.util.Calendar
 import java.util.Date
 
+// On devrait faire un vrai repository ici avant de faire des tests
 
 object DummyData {
-    fun generateDate(monthsBack: Int): Date {
-        val calendar = Calendar.getInstance()
+
+    /**
+     * Génère la date du jour - le nombre de mois passé en paramètre
+     */
+    fun generateDate(monthsBack: Int, calendar: Calendar = Calendar.getInstance()): Date {
         calendar.add(Calendar.MONTH, -monthsBack)
         return calendar.time
     }
