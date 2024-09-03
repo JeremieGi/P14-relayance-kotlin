@@ -12,6 +12,7 @@ import org.junit.Assert.*
 // => J'ai du créé une configuration dédiée "Tests with Coverage"
 
 // TODO Denis : Pour les rendus, il est demandé un fichier html (compte-rendu de test) mais il faut tous les fichiers liés
+// TODO Denis : L'exercice 1 et 2 => Même lien GitHub
 
 /**
  * Instrumented test, which will execute on an Android device.
