@@ -1,35 +1,41 @@
-package com.kirabium.relayance.ui.activity
+package com.kirabium.relayance.ui.activity.details
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.kirabium.relayance.R
-import com.kirabium.relayance.data.DummyData
-import com.kirabium.relayance.databinding.ActivityDetailBinding
-import com.kirabium.relayance.extension.DateExt.Companion.toHumanDate
-import com.kirabium.relayance.ui.composable.DetailScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
+
+    // View Model
+    private val viewModel: DetailViewModel by viewModels()
 
     companion object {
         const val EXTRA_CUSTOMER_ID = "customer_id"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setupUI()
+
+        val customerId = intent.getIntExtra(EXTRA_CUSTOMER_ID, -1)
+        setupUI(customerId)
+
     }
 
-    private fun setupUI() {
-        val customerId = intent.getIntExtra(EXTRA_CUSTOMER_ID, -1)
-        DummyData.customers.find { it.id == customerId }?.let {
+    private fun setupUI(customerId: Int) {
+
+        val customer = viewModel.loadCustomerById(customerId)
+        if (customer!=null){
             setContent {
-                DetailScreen(customer = it) {
+                DetailScreen(customer = customer) {
                     onBackPressedDispatcher.onBackPressed()
                 }
             }
         }
+
     }
 }
 

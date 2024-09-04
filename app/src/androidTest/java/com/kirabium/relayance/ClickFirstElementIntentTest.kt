@@ -11,7 +11,7 @@ import androidx.test.espresso.intent.rule.IntentsRule
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.kirabium.relayance.ui.activity.DetailActivity
+import com.kirabium.relayance.ui.activity.details.DetailActivity
 import com.kirabium.relayance.ui.activity.MainActivity
 import com.kirabium.relayance.util.RecyclerViewItemCountAssertion
 import org.junit.Rule

@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("jacoco")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 tasks.withType<Test> {
     extensions.configure(JacocoTaskExtension::class) {
@@ -120,6 +122,14 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.contrib) //  actions sur RecyclerView
 
     testImplementation(libs.mockk)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.hilt.navigation.fragment)
+    kapt(libs.hilt.compiler)
 
 
 }

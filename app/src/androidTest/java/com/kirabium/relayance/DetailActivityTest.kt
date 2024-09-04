@@ -7,7 +7,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.kirabium.relayance.ui.activity.DetailActivity
+import com.kirabium.relayance.ui.activity.details.DetailActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
