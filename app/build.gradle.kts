@@ -30,7 +30,10 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testApplicationId = "com.kirabium.relayance.test"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -130,6 +133,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.hilt.navigation.fragment)
     kapt(libs.hilt.compiler)
+
+    // Dépendances Cucumber pour Android
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
+    androidTestImplementation("com.android.support.test:rules:1.0.2")
+    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
 
 
 }

@@ -18,6 +18,7 @@ class CustomersRepository {
         }
     }
 
+    // TODO Denis : Il faut faire un MVVM avec des Flow + UI State ?
     private val _customers : MutableList<Customer> = mutableListOf(
         Customer(1, "Alice Wonderland", "alice@example.com", generateDate(12)),
         Customer(2, "Bob Builder", "bob@example.com", generateDate(6)),
