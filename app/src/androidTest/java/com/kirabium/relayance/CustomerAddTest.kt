@@ -28,6 +28,23 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 // https://www.youtube.com/watch?v=vZV6EiSJAfc
+// Source de la vidéo : https://github.com/innovationindiaforall/Testing => projet Android_BDD_UI
+
+/**
+ * Feature: Ajout d'un client
+ *   Ajout un client dans la liste des clients
+ *
+ * @add-feature
+ * Scenario Outline: Add
+ *     Given la fenêtre principale est ouverte
+ *     When Je clique sur ajouter
+ *     And Je saisis un nom
+ *     And Je saisis un email correct
+ * 	And Je clique sur le bouton d'enregistrement
+ *     Then La fenêtre d'ajout se ferme et la fenêtre listant les clients fait apparaître le nouveau client
+ *     Examples:
+ *         Jeremie |  jeremie@free.fr
+ */
 
 @SmallTest
 @RunWith(AndroidJUnit4::class)

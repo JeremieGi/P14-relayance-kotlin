@@ -9,7 +9,7 @@ import cucumber.api.android.CucumberInstrumentationCore;
 import cucumber.api.junit.Cucumber;
 
 /**
- * https://github.com/innovationindiaforall/Testing
+ *
  *
  * Step 3: Create Cucumber Instrumentation Class To run the Cucumber scenarios,
  * we need to create an instrumentation class that will initiate the Cucumber test.
