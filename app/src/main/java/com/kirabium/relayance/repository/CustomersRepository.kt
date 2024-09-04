@@ -8,6 +8,15 @@ import java.util.Date
 
 class CustomersRepository {
 
+    companion object {
+        /**
+         * Génère la date du jour - le nombre de mois passé en paramètre
+         */
+        fun generateDate(monthsBack: Int, calendar: Calendar = Calendar.getInstance()): Date {
+            calendar.add(Calendar.MONTH, -monthsBack)
+            return calendar.time
+        }
+    }
 
     private val _customers : MutableList<Customer> = mutableListOf(
         Customer(1, "Alice Wonderland", "alice@example.com", generateDate(12)),
@@ -18,13 +27,7 @@ class CustomersRepository {
     )
     val customers : List<Customer> = _customers.toList()
 
-    /**
-     * Génère la date du jour - le nombre de mois passé en paramètre
-     */
-    private fun generateDate(monthsBack: Int, calendar: Calendar = Calendar.getInstance()): Date {
-        calendar.add(Calendar.MONTH, -monthsBack)
-        return calendar.time
-    }
+
 
     /**
      * Ajouter un client
