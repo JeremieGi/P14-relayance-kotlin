@@ -19,7 +19,7 @@ import cucumber.api.junit.Cucumber;
  * app/src/androidTest/java/com.examplebdd.test and add the following code:
  */
 
-@Ignore  // TODO JG : A décommenter
+@Ignore  // TODO Denis / JG : A décommenter + Voir explication
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features",
         glue = "com.kirabium.relayance.test",

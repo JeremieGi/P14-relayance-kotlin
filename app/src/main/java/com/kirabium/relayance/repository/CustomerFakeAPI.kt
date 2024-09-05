@@ -8,13 +8,16 @@ class CustomerFakeAPI : ICustomerAPI {
 
     private var _customers : MutableList<Customer>  = mutableListOf()
 
-    /**
-     * Génère la date du jour - le nombre de mois passé en paramètre
-     */
-    fun generateDate(monthsBack: Int, calendar: Calendar = Calendar.getInstance()): Date {
-        calendar.add(Calendar.MONTH, -monthsBack)
-        return calendar.time
+    companion object {
+        /**
+         * Génère la date du jour - le nombre de mois passé en paramètre
+         */
+        fun generateDate(monthsBack: Int, calendar: Calendar = Calendar.getInstance()): Date {
+            calendar.add(Calendar.MONTH, -monthsBack)
+            return calendar.time
+        }
     }
+
 
     // Fonction utile surtout dans les tests autos pour réinitialiser les données
     override fun initRepo() {

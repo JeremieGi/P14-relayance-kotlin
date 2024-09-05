@@ -14,9 +14,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-// Lancement géénral des tests :
-// TODO JG Denis Question : comment exclure certaines classes de la couverture (classe Hilt par exemple)
-// TODO JG Denis Question : pourquoi 0% de coverage sur le repository ?
+// Lancement général des tests hors Cucumber (en attendant) :
+// TODO Prio 2 JG Denis : Voir le process pour lancer les tests avec couverture
+// Actuellement 0% de coverage sur le repository par exemple...
 
 @RunWith(AndroidJUnit4::class)
 class CustomerAddTestWithoutCucumber {

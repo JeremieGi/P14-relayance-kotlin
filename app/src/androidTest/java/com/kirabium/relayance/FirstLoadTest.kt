@@ -21,6 +21,10 @@ class FirstLoadTest {
     @Test
     fun load5customers() {
 
+        // TODO Denis prio 3 : j'ai parfois des erreurs dans l'enchainements des tests
+        //  car le répository n'est pas réinitialisé et qu'il peut y avoir 6 items au lancement du test
+        // (si le test d'ajout passe avant)
+
         // Vérification que le RecyclerView fait 5 éléments
         onView(withId(R.id.customerRecyclerView))
             .check( RecyclerViewItemCountAssertion.withItemCount(5) )

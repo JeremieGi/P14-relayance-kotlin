@@ -1,11 +1,11 @@
 package com.kirabium.relayance
 
-import com.kirabium.relayance.repository.CustomersRepository
+import com.kirabium.relayance.repository.CustomerFakeAPI
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.Calendar
 
-class CustomersRepositoryTest {
+class CustomerFakeAPITest {
 
     /*
     @Test
@@ -53,7 +53,7 @@ class CustomersRepositoryTest {
         val expectedDate = expectedCalendar.time
 
         // Test de la fonction
-        val resultDate = CustomersRepository.generateDate(3, paramCalendar)
+        val resultDate = CustomerFakeAPI.generateDate(3, paramCalendar)
 
         // Validez que la date générée est correcte
         assertEquals(expectedDate, resultDate)
@@ -73,7 +73,7 @@ class CustomersRepositoryTest {
 
 
         // Test de la fonction
-        val resultDate = CustomersRepository.generateDate(0, paramCalendar)
+        val resultDate = CustomerFakeAPI.generateDate(0, paramCalendar)
 
         // Validez que la date générée est correcte
         assertEquals(expectedDate, resultDate)
@@ -97,7 +97,7 @@ class CustomersRepositoryTest {
         val expectedDate = expectedCalendar.time
 
         // Test de la fonction
-        val resultDate = CustomersRepository.generateDate(-12, paramCalendar)
+        val resultDate = CustomerFakeAPI.generateDate(-12, paramCalendar)
 
         // Validez que la date générée est correcte
         assertEquals(expectedDate, resultDate)

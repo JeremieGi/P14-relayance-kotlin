@@ -26,7 +26,5 @@ class DateExtTest {
 
     }
 
-    // TODO Denis 2 : Pas trop d'autre idée de test
-
 
 }
