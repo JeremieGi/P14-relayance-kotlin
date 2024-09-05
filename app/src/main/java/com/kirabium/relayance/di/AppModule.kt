@@ -1,6 +1,7 @@
 package com.kirabium.relayance.di
 
-import com.kirabium.relayance.repository.CustomersRepository
+import com.kirabium.relayance.repository.CustomerFakeAPI
+import com.kirabium.relayance.repository.ICustomerAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,10 +12,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class AppModule {
 
+
     @Provides
     @Singleton
-    fun provideCustomersRepository(): CustomersRepository {
-        return CustomersRepository()
+    fun provideICustomerAPI(): ICustomerAPI {
+        return CustomerFakeAPI()
     }
+
 
 }

@@ -14,6 +14,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.kirabium.relayance.ui.activity.details.DetailActivity
 import com.kirabium.relayance.ui.activity.MainActivity
 import com.kirabium.relayance.util.RecyclerViewItemCountAssertion
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,6 +31,11 @@ class ClickFirstElementIntentTest {
     // Ajoutez explicitement IntentsRule à vos tests pour assurer une configuration correcte et une libération des ressources.
     @get:Rule
     var intentsRule = IntentsRule()
+
+    @Before
+    fun intRepository(){
+
+    }
 
     @Test
     fun clickAndTestIntent() {

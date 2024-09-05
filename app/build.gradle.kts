@@ -96,6 +96,16 @@ val jacocoTestReport by tasks.registering(JacocoReport::class) {
     sourceDirectories.setFrom(files(mainSrc))
     executionData.setFrom(fileTree(buildDir) {
         include("**/*.exec", "**/*.ec")
+        exclude(
+            "**/R.class",
+            "**/R$*.class",
+            "**/BuildConfig.*",
+            "**/Manifest*.*",
+            "**/*Test*.*",
+            "**/android/**/*.*",
+            "**/androidx/**/*.*",
+            "**/di/**/*.*"
+        )
     })
 }
 
