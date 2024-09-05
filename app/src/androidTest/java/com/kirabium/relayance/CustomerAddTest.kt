@@ -38,6 +38,8 @@ import org.junit.runner.RunWith
  *         Jeremie |  jeremie@free.fr
  */
 
+//TODO Denis Prio 1 : Le test ne passe pas (remettre testInstrumentationRunner dans build.gradle)
+
 @SmallTest
 @RunWith(AndroidJUnit4::class)
 class CustomerAddTest {
@@ -78,12 +80,10 @@ class CustomerAddTest {
             .perform( click() )
     }
 
-    //TODO Denis Prio 1 : Le test ne passe pas
+
     @Then("la fenetre pour ajouter un nouveau client est affichee$")
     //@Throws(Throwable::class)
     fun la_fenetre_pour_ajouter_un_nouveau_client_est_affichee() {
-
-        Thread.sleep(2000) //TODO Denis JG : Comment éviter de faire un sleep
 
         onView(withId(R.id.nameEditText))
             //.check( doesNotExist() )

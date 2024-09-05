@@ -11,7 +11,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class AppModule {
 
-    // TODO JG => Voir si utile
     @Provides
     @Singleton
     fun provideCustomersRepository(): CustomersRepository {

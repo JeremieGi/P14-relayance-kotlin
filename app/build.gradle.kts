@@ -31,8 +31,8 @@ android {
         versionName = "1.0"
 
         testApplicationId = "com.kirabium.relayance.test"
-        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
 
         vectorDrawables {
             useSupportLibrary = true
