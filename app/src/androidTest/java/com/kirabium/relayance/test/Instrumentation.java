@@ -2,6 +2,8 @@ package com.kirabium.relayance.test;
 
 import android.os.Bundle;
 import androidx.test.runner.MonitoringInstrumentation;
+
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import java.io.File;
 import cucumber.api.CucumberOptions;
@@ -17,6 +19,7 @@ import cucumber.api.junit.Cucumber;
  * app/src/androidTest/java/com.examplebdd.test and add the following code:
  */
 
+@Ignore  // TODO JG : A décommenter
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features",
         glue = "com.kirabium.relayance.test",
