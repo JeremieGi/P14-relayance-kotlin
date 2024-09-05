@@ -2,7 +2,6 @@ package com.kirabium.relayance
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -79,7 +78,7 @@ class CustomerAddTest {
             .perform( click() )
     }
 
-
+    //TODO Denis Prio 1 : Le test ne passe pas
     @Then("la fenetre pour ajouter un nouveau client est affichee$")
     //@Throws(Throwable::class)
     fun la_fenetre_pour_ajouter_un_nouveau_client_est_affichee() {

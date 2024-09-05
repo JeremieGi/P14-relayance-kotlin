@@ -1,6 +1,8 @@
 package com.kirabium.relayance.repository
 
 import com.kirabium.relayance.domain.model.Customer
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 import java.util.Calendar
 import java.util.Date
 
@@ -18,7 +20,10 @@ class CustomersRepository {
         }
     }
 
-    // TODO Denis : Il faut faire un MVVM avec des Flow + UI State ?
+    private val _customersFlow = MutableSharedFlow<List<Customer>>()
+    val customersFlow: SharedFlow<List<Customer>> get() = _customersFlow
+
+
     private val _customers : MutableList<Customer> = mutableListOf(
         Customer(1, "Alice Wonderland", "alice@example.com", generateDate(12)),
         Customer(2, "Bob Builder", "bob@example.com", generateDate(6)),
@@ -26,8 +31,14 @@ class CustomersRepository {
         Customer(4, "Diana Dream", "diana@example.com", generateDate(1)),
         Customer(5, "Evan Escape", "evan@example.com", generateDate(0)),
     )
-    val customers : List<Customer> = _customers.toList()
 
+
+    // Chargement des clients
+    suspend fun loadAllCustomers() {
+
+         _customersFlow.emit(_customers)
+
+    }
 
 
     /**
@@ -38,7 +49,7 @@ class CustomersRepository {
     }
 
     fun loadCustomerById(customerId: Int) : Customer? {
-        return customers.find { it.id == customerId }
+        return _customers.find { it.id == customerId }
     }
 
 
