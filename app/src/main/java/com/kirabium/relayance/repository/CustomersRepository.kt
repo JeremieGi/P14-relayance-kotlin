@@ -52,5 +52,9 @@ class CustomersRepository {
         return _customers.find { it.id == customerId }
     }
 
+    fun getNewID(): Int {
+        return _customers.maxOf { it.id } + 1
+    }
+
 
 }
