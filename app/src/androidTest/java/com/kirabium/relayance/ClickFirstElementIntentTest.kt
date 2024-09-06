@@ -42,7 +42,7 @@ class ClickFirstElementIntentTest {
 
         // Vérification que le RecyclerView fait 5 éléments
         onView(withId(R.id.customerRecyclerView))
-            .check( RecyclerViewItemCountAssertion.withItemCount(5) )
+            .check( RecyclerViewItemCountAssertion.withItemCount(5) ) // TODO Denis : Il s'agit d'une méthode créée spcialement pour le test ?
             // Clic sur le 1er élément
             .perform( RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click())  )
 

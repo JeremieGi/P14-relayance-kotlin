@@ -19,16 +19,14 @@ import cucumber.api.junit.Cucumber;
  * app/src/androidTest/java/com.examplebdd.test and add the following code:
  */
 
-@Ignore  // TODO Denis / JG : A décommenter + Voir explication
-@RunWith(Cucumber.class)
+
 @CucumberOptions(features = "features",
         glue = "com.kirabium.relayance.test",
         monochrome = true)
-
 public class Instrumentation extends MonitoringInstrumentation {
 
     private final CucumberInstrumentationCore instrumentationCore = new CucumberInstrumentationCore(this);
-
+/*
     @Override
     public void onCreate(Bundle arguments) {
         arguments.putString("plugin", "json:" + getAbsoluteFilesPath() + "/cucumber.json");
@@ -46,6 +44,20 @@ public class Instrumentation extends MonitoringInstrumentation {
         instrumentationCore.create(arguments);
         start();
     }
+*/
+    @Override
+    public void onCreate(Bundle arguments) {
+        super.onCreate(arguments);
+
+        // String tags = BuildConfig.TEST_TAGS;
+        String tags = "";
+        if (!tags.isEmpty()) { // TODO Denis : Si je décommente cette ligne j'ai un plantage au lancement du test Cucumber ...
+            arguments.putString("tags", tags.replaceAll(",", "--").replaceAll("\\s",""));
+        }
+
+        instrumentationCore.create(arguments);
+        start();
+    }
 
     @Override
     public void onStart() {
@@ -53,11 +65,11 @@ public class Instrumentation extends MonitoringInstrumentation {
         waitForIdleSync();
         instrumentationCore.start();
     }
-
+/*
     private String getAbsoluteFilesPath() {
         File directory = getTargetContext().getExternalFilesDir(null);
         return new File(directory, "reports").getAbsolutePath();
         // The path to the report - sdcard/Android/data/.../reports
     }
-
+*/
 }

@@ -9,13 +9,13 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.kirabium.relayance.ui.activity.MainActivity
+import cucumber.api.PendingException
 import cucumber.api.java.After
 import cucumber.api.java.Before
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 import org.junit.Assert.assertNotNull
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.runner.RunWith
 
@@ -26,9 +26,9 @@ import org.junit.runner.RunWith
 //TODO Denis Prio 1 : Le test ne passe pas avec Cucumber
 // (remettre testInstrumentationRunner dans build.gradle)
 
-@Ignore // TODO JG : A recommenter
-@SmallTest
-@RunWith(AndroidJUnit4::class)
+//@SmallTest
+//@RunWith(AndroidJUnit4ClassRunner::class)
+//@RunWith(AndroidJUnit4::class)
 class CustomerAddTest {
 
     // Lancement de l'activité principale en début de test
@@ -56,20 +56,20 @@ class CustomerAddTest {
      * $ : Ce symbole indique la fin de la chaîne.
      */
 
-    @Given("^la fenêtre principale est ouverte$")
+    @Given("^fenetre de lancement$")
     fun fenetre_principale() {
         assertNotNull(activity)
     }
 
-    @When("^Je clique sur ajouter$")
+    @When("^clic sur bouton Plus$")
     fun click_plus() {
         onView(withId(R.id.addCustomerFab))
             .perform( click() )
     }
 
 
-    @Then("la fenetre pour ajouter un nouveau client est affichee$")
-    //@Throws(Throwable::class)
+    @Then("^fenetre d ajout affichee$")
+    @Throws(Throwable::class)
     fun la_fenetre_pour_ajouter_un_nouveau_client_est_affichee() {
 
         onView(withId(R.id.nameEditText))
