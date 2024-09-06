@@ -31,8 +31,11 @@ android {
         versionName = "1.0"
 
         testApplicationId = "com.kirabium.relayance.test"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        //testInstrumentationRunner = "com.kirabium.relayance.HiltTestRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.kirabium.relayance.HiltTestRunner"
+       // testInstrumentationRunner="io.cucumber.android.runner.CucumberAndroidJUnitRunner"
+        //testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
+        //testInstrumentationRunnerArguments(optionsAnnotationPackage: "some.other.package")
 
         vectorDrawables {
             useSupportLibrary = true
@@ -96,16 +99,16 @@ val jacocoTestReport by tasks.registering(JacocoReport::class) {
     sourceDirectories.setFrom(files(mainSrc))
     executionData.setFrom(fileTree(buildDir) {
         include("**/*.exec", "**/*.ec")
-        exclude(
-            "**/R.class",
-            "**/R$*.class",
-            "**/BuildConfig.*",
-            "**/Manifest*.*",
-            "**/*Test*.*",
-            "**/android/**/*.*",
-            "**/androidx/**/*.*",
-            "**/di/**/*.*"
-        )
+//        exclude(
+//            "**/R.class",
+//            "**/R$*.class",
+//            "**/BuildConfig.*",
+//            "**/Manifest*.*",
+//            "**/*Test*.*",
+//            "**/android/**/*.*",
+//            "**/androidx/**/*.*",
+//            "**/di/**/*.*"
+//        )
     })
 }
 
@@ -146,13 +149,18 @@ dependencies {
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.51.1")
 
+    //androidTestImplementation("io.cucumber:cucumber-android-hilt:1.2.6")
+
     // Dépendances Cucumber pour Android
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+//    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
+//    androidTestImplementation("androidx.test:rules:1.6.1")
+//    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
+
+
+
+    //androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     androidTestImplementation("info.cukes:cucumber-android:1.2.6")
     androidTestImplementation("com.android.support.test:rules:1.0.2")
     androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
-    //androidTestImplementation("io.cucumber:cucumber-android:7.0.0" )
-    //androidTestImplementation("io.cucumber:cucumber-java:7.0.0")
 
 }

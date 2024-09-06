@@ -3,6 +3,7 @@ package com.kirabium.relayance
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.kirabium.relayance.ui.activity.MainActivity
 import org.junit.Rule
@@ -13,26 +14,26 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
 
-@HiltAndroidTest // Ce test passait avec testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//@HiltAndroidTest // Ce test passait avec testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 @RunWith(AndroidJUnit4::class)
 class FirstLoadTest {
-
-    @get:Rule
-    var hiltRule = HiltAndroidRule(this)
+//
+//    @get:Rule
+//    var hiltRule = HiltAndroidRule(this)
 
     // Lancement de l'activité principale en début de test
- //   @get:Rule
-//    var activityTest = ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule
+    var activityTest = ActivityScenarioRule(MainActivity::class.java)
 
 
-    @Before
-    fun setUp() {
-        // Injecte les dépendances avant chaque test
-        hiltRule.inject()
-
-        // Lancement manuel de l'activité après injection Hilt
-        ActivityScenario.launch(MainActivity::class.java)
-    }
+//    @Before
+//    fun setUp() {
+//        // Injecte les dépendances avant chaque test
+//        hiltRule.inject()
+//
+//        // Lancement manuel de l'activité après injection Hilt
+//        ActivityScenario.launch(MainActivity::class.java)
+//    }
 
     @Test
     fun load5customers() {

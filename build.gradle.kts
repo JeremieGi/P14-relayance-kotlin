@@ -4,3 +4,14 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
 }
+
+buildscript {
+
+    dependencies {
+        //Jacoco Plugin
+        classpath("org.jacoco:org.jacoco.core:0.8.10")
+    }
+
+}
+
+//apply(from = "${project.rootDir}/jacoco.gradle")
