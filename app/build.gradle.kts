@@ -31,9 +31,8 @@ android {
         versionName = "1.0"
 
         testApplicationId = "com.kirabium.relayance.test"
-        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
-        //testInstrumentationRunner = "io.cucumber.android.runner.CucumberAndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "com.kirabium.relayance.HiltTestRunner"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -144,7 +143,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.hilt.navigation.fragment)
     kapt(libs.hilt.compiler)
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.51.1")
 
     // Dépendances Cucumber pour Android
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
