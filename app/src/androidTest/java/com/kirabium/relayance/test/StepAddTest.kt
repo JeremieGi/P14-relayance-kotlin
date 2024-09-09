@@ -9,7 +9,6 @@ import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.platform.app.InstrumentationRegistry
 import com.kirabium.relayance.R
 import com.kirabium.relayance.ui.activity.MainActivity
@@ -22,8 +21,8 @@ import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import org.junit.Rule
-import io.cucumber.java.PendingException
 import io.cucumber.java.en.And
+import io.cucumber.java.PendingException
 
 @HiltAndroidTest
 class StepAddTest {
@@ -147,4 +146,42 @@ class StepAddTest {
             .check(matches(hasDescendant(withText(sExpectedErrorNoName))))
 
     }
+
+    @Then("un message indique que le mail est obligatoire")
+    fun unMessageIndiqueQueLeMailEstObligatoire() {
+
+        // Obtenir la ressource de chaîne
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val sExpectedErrorNoMail = appContext.getString(R.string.mail_check)
+
+        // 2 façons de vérifier
+
+        // Vérification que le texte d'erreur apparaît dans la View
+        onView(withText(sExpectedErrorNoMail)).check(matches(isDisplayed()))
+
+        // Vérification que le texte apparait en tant que descendant du champ TextInputLayout
+        onView(withId(R.id.emailTextInputLayout))
+            .check(matches(hasDescendant(withText(sExpectedErrorNoMail))))
+
+    }
+
+    @Then("un message indique que le mail est incorrect")
+    fun unMessageIndiqueQueLeMailEstIncorrect() {
+
+        // Obtenir la ressource de chaîne
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val sExpectedErrorMail = appContext.getString(R.string.invalid_format)
+
+        // 2 façons de vérifier
+
+        // Vérification que le texte d'erreur apparaît dans la View
+        onView(withText(sExpectedErrorMail)).check(matches(isDisplayed()))
+
+        // Vérification que le texte apparait en tant que descendant du champ TextInputLayout
+        onView(withId(R.id.emailTextInputLayout))
+            .check(matches(hasDescendant(withText(sExpectedErrorMail))))
+
+    }
+
+
 }
