@@ -85,6 +85,12 @@ android {
 
 val androidExtension = extensions.getByType<BaseExtension>()
 
+jacoco {
+    toolVersion = "0.8.12"
+    //reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+// Register a JacocoReport task for code coverage analysis
 val jacocoTestReport by tasks.registering(JacocoReport::class) {
     dependsOn("testDebugUnitTest", "createDebugCoverageReport")
     group = "Reporting"
@@ -102,16 +108,6 @@ val jacocoTestReport by tasks.registering(JacocoReport::class) {
     sourceDirectories.setFrom(files(mainSrc))
     executionData.setFrom(fileTree(buildDir) {
         include("**/*.exec", "**/*.ec")
-//        exclude(
-//            "**/R.class",
-//            "**/R$*.class",
-//            "**/BuildConfig.*",
-//            "**/Manifest*.*",
-//            "**/*Test*.*",
-//            "**/android/**/*.*",
-//            "**/androidx/**/*.*",
-//            "**/di/**/*.*"
-//        )
     })
 }
 
