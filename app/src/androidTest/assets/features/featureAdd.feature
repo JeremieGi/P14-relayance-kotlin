@@ -10,11 +10,7 @@ Feature: Ajout d'un client
 
 
     @ScenarioFenetreDeLancement
-
-     #Scenario Outline = > Section Examples obligatoire sinon le test ne se lance pas
-
-    Scenario Outline: Ajout d'un client avec succès
-
+    Scenario: Ajout d'un client avec succès
         Given fenetre de lancement ouverte
         When clic sur bouton Plus
         Then fenetre d ajout affichee
@@ -22,9 +18,12 @@ Feature: Ajout d'un client
         And je saisis comme email "jeremie@free.fr"
         And je clique sur enregistrer
         Then la fenêtre principale s'affiche avec un élément de plus
-        Examples:
-            | Examples:    |
-            | example_name |
-            | test         |
 
 
+    @ScenarioFenetreAjout
+    Scenario: Champ Nom obligatoire
+        Given fenetre d ajout affichee
+        When je saisis comme nom ""
+        And je saisis comme email "jeremie@free.fr"
+        And je clique sur enregistrer
+        Then un message indique que le nom est obligatoire
