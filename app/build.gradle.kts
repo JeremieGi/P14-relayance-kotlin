@@ -32,7 +32,7 @@ android {
 
         testApplicationId = "com.kirabium.relayance.test"
         //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.kirabium.relayance.HiltTestRunner"
+        testInstrumentationRunner = "com.kirabium.relayance.test.HiltTestRunner"
        // testInstrumentationRunner="io.cucumber.android.runner.CucumberAndroidJUnitRunner"
         //testInstrumentationRunner = "com.kirabium.relayance.test.Instrumentation"
         //testInstrumentationRunnerArguments(optionsAnnotationPackage: "some.other.package")
@@ -78,6 +78,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+//    testOptions {
+//        execution = "ANDROIDX_TEST_ORCHESTRATOR"
+//    }
 }
 
 val androidExtension = extensions.getByType<BaseExtension>()
@@ -159,8 +162,17 @@ dependencies {
 
 
     //androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
-    androidTestImplementation("com.android.support.test:rules:1.0.2")
-    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
+//    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
+//    androidTestImplementation("com.android.support.test:rules:1.0.2")
+//    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
+
+    androidTestUtil("androidx.test:orchestrator:1.5.0")
+    androidTestImplementation("io.cucumber:cucumber-junit:7.18.1")
+    androidTestImplementation("io.cucumber:cucumber-android:7.18.1")
+    androidTestImplementation("io.cucumber:cucumber-java:7.18.1")
+
+
+//    androidTestImplementation(project(":cucumber-android"))
+//    androidTestImplementation(project(":cucumber-android-hilt"))
 
 }
