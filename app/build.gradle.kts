@@ -170,6 +170,7 @@ dependencies {
     androidTestImplementation("io.cucumber:cucumber-junit:7.18.1")
     androidTestImplementation("io.cucumber:cucumber-android:7.18.1")
     androidTestImplementation("io.cucumber:cucumber-java:7.18.1")
+    androidTestImplementation("io.cucumber:cucumber-android-hilt:7.18.1")
 
 
 //    androidTestImplementation(project(":cucumber-android"))
