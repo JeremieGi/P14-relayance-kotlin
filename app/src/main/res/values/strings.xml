@@ -13,4 +13,5 @@
     <string name="name_check">Please enter a name</string>
     <string name="mail_check">Please select email</string>
     <string name="invalid_format">Invalid format</string>
+    <string name="customer_added">Customer added</string>
 </resources>

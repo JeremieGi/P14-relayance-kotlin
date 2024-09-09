@@ -16,6 +16,7 @@ class AddCustomerViewModel @Inject constructor(
         val customer = customersRepository.createNewCustomer(sNameP,sEmailP)
         customersRepository.addCustomer(customer)
 
+
     }
 
 }

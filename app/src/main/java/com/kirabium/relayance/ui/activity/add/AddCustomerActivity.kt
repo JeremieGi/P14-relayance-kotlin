@@ -1,6 +1,7 @@
 package com.kirabium.relayance.ui.activity.add
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.kirabium.relayance.R
@@ -35,6 +36,9 @@ class AddCustomerActivity : AppCompatActivity() {
             viewModel.addCustomer(
                 binding.nameEditText.text.toString(),
                 binding.emailEditText.text.toString())
+
+            Toast.makeText(this.applicationContext,
+                getString(R.string.customer_added), Toast.LENGTH_SHORT).show();
 
             // Ferme l'activity
             finish()
