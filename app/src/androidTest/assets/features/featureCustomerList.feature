@@ -9,4 +9,4 @@ Feature: Liste les clients
   Scenario: Clic sur un élément ouvre le détail
     Given fenetre de lancement ouverte avec les clients initiaux
     When clic sur le premier élément de la liste
-    Then la fenetre de detail est lancée avec le bon ID
+    Then la fenetre de detail est lancée avec le bon parametre
