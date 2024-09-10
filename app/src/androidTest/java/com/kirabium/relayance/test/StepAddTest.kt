@@ -22,7 +22,6 @@ import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import org.junit.Rule
 import io.cucumber.java.en.And
-import io.cucumber.java.PendingException
 
 @HiltAndroidTest
 class StepAddTest {
@@ -54,7 +53,7 @@ class StepAddTest {
     }
 
 
-    @Given("fenetre de lancement ouverte")
+    @Given("fenetre de lancement ouverte avec les clients initiaux")
     fun fenetreDeLancement() {
         onView(withId(R.id.customerRecyclerView))
             .check( RecyclerViewItemCountAssertion.withItemCount(5) )
@@ -182,6 +181,7 @@ class StepAddTest {
             .check(matches(hasDescendant(withText(sExpectedErrorMail))))
 
     }
+
 
 
 }

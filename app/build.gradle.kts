@@ -85,10 +85,10 @@ android {
 
 val androidExtension = extensions.getByType<BaseExtension>()
 
-jacoco {
-    toolVersion = "0.8.12"
-    //reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
-}
+//jacoco {
+//    toolVersion = "0.8.12"
+//    //reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+//}
 
 // Register a JacocoReport task for code coverage analysis
 val jacocoTestReport by tasks.registering(JacocoReport::class) {
@@ -148,28 +148,13 @@ dependencies {
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.51.1")
 
-    //androidTestImplementation("io.cucumber:cucumber-android-hilt:1.2.6")
 
     // Dépendances Cucumber pour Android
-//    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
-//    androidTestImplementation("androidx.test:rules:1.6.1")
-//    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
-
-
-
-    //androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-//    androidTestImplementation("info.cukes:cucumber-android:1.2.6")
-//    androidTestImplementation("com.android.support.test:rules:1.0.2")
-//    androidTestImplementation("info.cukes:cucumber-junit:1.2.6")
-
     androidTestUtil("androidx.test:orchestrator:1.5.0")
     androidTestImplementation("io.cucumber:cucumber-junit:7.18.1")
     androidTestImplementation("io.cucumber:cucumber-android:7.18.1")
     androidTestImplementation("io.cucumber:cucumber-java:7.18.1")
     androidTestImplementation("io.cucumber:cucumber-android-hilt:7.18.1")
 
-
-//    androidTestImplementation(project(":cucumber-android"))
-//    androidTestImplementation(project(":cucumber-android-hilt"))
 
 }

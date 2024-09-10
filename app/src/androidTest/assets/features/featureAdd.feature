@@ -4,14 +4,14 @@ Feature: Ajout d'un client
     @ScenarioFenetreDeLancement
     Scenario: Affichage de la fenetre d'ajout
          # chaque ligne ici se nomme un step
-        Given fenetre de lancement ouverte
+        Given fenetre de lancement ouverte avec les clients initiaux
         When clic sur bouton Plus
         Then fenetre d ajout affichee
 
 
     @ScenarioFenetreDeLancement
     Scenario: Ajout d'un client avec succès
-        Given fenetre de lancement ouverte
+        Given fenetre de lancement ouverte avec les clients initiaux
         When clic sur bouton Plus
         Then fenetre d ajout affichee
         When je saisis comme nom "jeremie"

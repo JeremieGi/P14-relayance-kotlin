@@ -19,6 +19,7 @@ import dagger.hilt.android.testing.HiltAndroidTest
 
 /**
  * Cette classe permet un test simple mais sans cucumber (avec le runner AndroidJUnit4)
+ * Ce test n'est pas lancer dans la couverture générale avec Jacoco (car pas Cucumber) mais l'équivalent existe dans Cucumber
  */
 
 @RunWith(AndroidJUnit4::class)
