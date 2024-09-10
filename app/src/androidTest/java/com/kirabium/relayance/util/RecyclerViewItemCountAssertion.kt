@@ -28,7 +28,7 @@ class RecyclerViewItemCountAssertion(private val matcher: Matcher<Int>) : ViewAs
             return withItemCount(org.hamcrest.CoreMatchers.`is`(expectedCount))
         }
 
-        fun withItemCount(matcher: Matcher<Int>): RecyclerViewItemCountAssertion {
+        private fun withItemCount(matcher: Matcher<Int>): RecyclerViewItemCountAssertion {
             return RecyclerViewItemCountAssertion(matcher)
         }
     }
