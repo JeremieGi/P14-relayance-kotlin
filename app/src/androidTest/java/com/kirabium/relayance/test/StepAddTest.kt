@@ -24,13 +24,6 @@ import io.cucumber.java.en.And
 @HiltAndroidTest
 class StepAddTest {
 
-//    @get:Rule(order = 1)
-//    var hiltRule = HiltAndroidRule(this)
-
-//    // Lancement de l'activité principale en début de test
-//    @get:Rule(order = 2)
-//    var activityTest = ActivityScenarioRule(MainActivity::class.java)
-
 
     @Before("@ScenarioFenetreDeLancement")
     fun launchMainActivity() {

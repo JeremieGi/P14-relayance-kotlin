@@ -5,6 +5,9 @@ import android.content.Intent
 import androidx.test.core.app.ActivityScenario
 import io.cucumber.java.After
 
+/**
+ * Classe permettant de lancer un activity Compose
+ */
 class ActivityScenarioHolder {
 
     private var scenario: ActivityScenario<*>? = null

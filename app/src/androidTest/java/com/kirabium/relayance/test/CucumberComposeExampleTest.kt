@@ -1,36 +1,23 @@
 package com.kirabium.relayance.test
 
 import androidx.compose.ui.test.SemanticsNodeInteractionsProvider
-import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.hasTestTag
-import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.performClick
-import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
-import com.kirabium.relayance.ui.activity.MainActivity
 import com.kirabium.relayance.ui.activity.details.DetailActivity
-import io.cucumber.java.Before
 import io.cucumber.java.en.Given
-import io.cucumber.java.en.Then
-import io.cucumber.java.en.When
+
 
 class CucumberComposeExampleTest(
-    val composeRuleHolder: ComposeRuleHolder,
-    val scenarioHolder: ActivityScenarioHolder
+    private val composeRuleHolder: ComposeRuleHolder,
+    private val scenarioHolder: ActivityScenarioHolder
 ):
-    SemanticsNodeInteractionsProvider by composeRuleHolder.composeRule{
+    SemanticsNodeInteractionsProvider  // Il s'agit d'une interface de Jetpack Compose utilisée pour interagir avec des nœuds d'interface utilisateur via des actions sémantiques.
+    by composeRuleHolder.composeRule{ // l'instance de CucumberComposeExampleTest délègue l'implémentation de l'interface SemanticsNodeInteractionsProvider à composeRuleHolder.composeRule (pas besoin d'implémenter les méthodes)
 
-        @Given("^I initialize App")
+        @Given("^Lance la fenetre de details")
         fun initializeApp(){
 
             val instrumentation = InstrumentationRegistry.getInstrumentation()
             scenarioHolder.launch(DetailActivity.create(instrumentation.targetContext,2))
-
-        }
-
-        @When("^I click Greet Cucumber")
-        fun checkButtonClick(){
 
         }
 
