@@ -1,15 +1,16 @@
 package com.kirabium.relayance.test
 
-import android.content.Context
+
 import androidx.compose.ui.test.SemanticsNodeInteractionsProvider
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.test.core.app.ActivityScenario
-import androidx.test.core.app.ApplicationProvider
+import androidx.test.platform.app.InstrumentationRegistry
 import com.kirabium.relayance.ui.activity.details.DetailActivity
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
+
 
 class StepCucumberComposeTest(
     private val composeRuleHolder: ComposeRuleHolder
@@ -18,18 +19,16 @@ class StepCucumberComposeTest(
 
     @Given("La fenetre de detail est lancee avec idCustomer = {int}")
     fun initializeApp(nIdCustomer : Int){
-        //val instrumentation = InstrumentationRegistry.getInstrumentation()
-        //val intent = DetailActivity.create(instrumentation.targetContext,nIdCustomer)
 
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        val intent = DetailActivity.create(context,nIdCustomer)
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val intent = DetailActivity.create(appContext,nIdCustomer)
 
         // Lancer l'activité avec l'Intent
         ActivityScenario.launch<DetailActivity>(intent)
     }
 
 
-    @When("^Le nom du client est affiche")
+    @When("Le nom du client est affiche")
     fun checkButtonClick(){
         onNodeWithContentDescription("Customer name")
             .assertIsDisplayed()
