@@ -21,7 +21,7 @@ class StepCucumberComposeTest(
 ) : SemanticsNodeInteractionsProvider by composeRuleHolder.composeRule
 {
 
-    @Given("^I initialize App")
+    @Given("^La fenetre de détail est lancee")
     fun initializeApp(){
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         val intent = DetailActivity.create(instrumentation.targetContext,1)
@@ -29,10 +29,17 @@ class StepCucumberComposeTest(
         ActivityScenario.launch<DetailActivity>(intent)
     }
 
-    @When("^I click Greet Cucumber")
+
+    @When("^Le nom du client est affiche")
     fun checkButtonClick(){
         onNodeWithContentDescription("Customer name")
-           .assertIsDisplayed()
+            .assertIsDisplayed()
+    }
+
+    @Then("L'email du client est affiche")
+    fun customerEmailIsDisplayed() {
+        onNodeWithContentDescription("Customer email")
+            .assertIsDisplayed()
     }
 
 
