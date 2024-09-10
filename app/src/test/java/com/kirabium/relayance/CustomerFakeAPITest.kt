@@ -20,7 +20,7 @@ class CustomerFakeAPITest {
         expectedCalendar.set(2024, Calendar.JUNE, 1)
         val expectedDate = expectedCalendar.time
 
-        // TODO 1 Denis : Je ne suis pas arrivé à mocker le calendar => j'ai passé la variable Calendar en paramètre
+        // Impossible de mocker le calendar => j'ai passé la variable Calendar en paramètre
         mockkStatic(Calendar::class)
         every { Calendar.getInstance() } returns fixedCalendar
 
