@@ -5,6 +5,10 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.kirabium.relayance.ui.activity.details.DetailActivity
 import io.cucumber.java.en.Given
 
+/**
+ * Article utile : https://medium.com/@santu.bhuniya2006/android-cucumber-test-with-jetpack-compose-application-f2161a8fc1b9
+ * et ses sources GitHub : https://github.com/santubhuniya/CucumberCompose.git
+ */
 
 class CucumberComposeExampleTest(
     private val composeRuleHolder: ComposeRuleHolder,
