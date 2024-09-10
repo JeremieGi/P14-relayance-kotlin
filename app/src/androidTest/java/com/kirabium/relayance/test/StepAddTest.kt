@@ -14,20 +14,18 @@ import com.kirabium.relayance.R
 import com.kirabium.relayance.ui.activity.MainActivity
 import com.kirabium.relayance.ui.activity.add.AddCustomerActivity
 import com.kirabium.relayance.util.RecyclerViewItemCountAssertion
-import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import io.cucumber.java.Before
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import org.junit.Rule
 import io.cucumber.java.en.And
 
 @HiltAndroidTest
 class StepAddTest {
 
-    @get:Rule(order = 1)
-    var hiltRule = HiltAndroidRule(this)
+//    @get:Rule(order = 1)
+//    var hiltRule = HiltAndroidRule(this)
 
 //    // Lancement de l'activité principale en début de test
 //    @get:Rule(order = 2)
@@ -37,7 +35,7 @@ class StepAddTest {
     @Before("@ScenarioFenetreDeLancement")
     fun launchMainActivity() {
         // Injecte les dépendances avant chaque test
-        hiltRule.inject()
+        //hiltRule.inject()
 
         // Lancement manuel de l'activité après injection Hilt
         ActivityScenario.launch(MainActivity::class.java)
@@ -46,7 +44,7 @@ class StepAddTest {
     @Before("@ScenarioFenetreAjout")
     fun launchAddCustomerActivity() {
         // Injecte les dépendances avant chaque test
-        hiltRule.inject()
+        //hiltRule.inject()
 
         // Lancement manuel de l'activité après injection Hilt
         ActivityScenario.launch(AddCustomerActivity::class.java)
