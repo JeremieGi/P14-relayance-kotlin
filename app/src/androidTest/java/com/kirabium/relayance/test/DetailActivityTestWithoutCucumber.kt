@@ -12,8 +12,14 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * Cette classe permet un test simple mais sans cucumber (avec le runner AndroidJUnit4)
+ * Ce test n'est pas lancé dans la couverture générale avec Jacoco (car pas Cucumber) mais l'équivalent existe dans Cucumber
+ */
+
+
 @RunWith(AndroidJUnit4::class)
-class DetailActivityTest {
+class DetailActivityTestWithoutCucumber {
 
     // https://developer.android.com/codelabs/jetpack-compose-testing?hl=fr#2
 
@@ -22,7 +28,7 @@ class DetailActivityTest {
     }
 
     // lancer l'activité avec son paramètre
-    @get:Rule
+    @get:Rule //@get:Rule est utilisée pour gérer automatiquement l'initialisation et la configuration des règles dans les tests JUnit
     val activityScenarioRule = ActivityScenarioRule<DetailActivity>(
         Intent(ApplicationProvider.getApplicationContext(), DetailActivity::class.java).apply {
             putExtra(DetailActivity.EXTRA_CUSTOMER_ID, IDCUSTOMER)

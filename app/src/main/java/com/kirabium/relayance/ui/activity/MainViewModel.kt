@@ -21,7 +21,6 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<CustomerListUIStates> = _uiState.asStateFlow()
 
     init {
-        customersRepository.initRepo()
         observeCustomers()
     }
 

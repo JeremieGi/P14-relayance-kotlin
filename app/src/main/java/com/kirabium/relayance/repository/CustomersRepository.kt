@@ -16,8 +16,7 @@ class CustomersRepository @Inject constructor(
     private val _customersFlow = MutableSharedFlow<List<Customer>>()
     val customersFlow: SharedFlow<List<Customer>> get() = _customersFlow
 
-
-    fun initRepo() {
+    init {
         customerAPI.initRepo()
     }
 

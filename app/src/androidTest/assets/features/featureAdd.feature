@@ -1,7 +1,8 @@
 Feature: Ajout d'un client
     Ajout d'un client dans la liste des clients
-    # TODO : Le lancement de test depuis Feature ne marche pas...
+    # Le lancement de test depuis Feature ne marche pas...
     # io.cucumber.core.runtime.Runtime runFeatures - GRAVE: Exception while executing pickle
+    # l'important c'est que çà fonctionne au lancement de la configuration : "Run Tests and Generate Jacoco Report"
 
     @ScenarioFenetreDeLancement
     Scenario: Affichage de la fenetre d'ajout
