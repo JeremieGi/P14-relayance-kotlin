@@ -2,9 +2,11 @@ package com.kirabium.relayance.test
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -102,11 +104,13 @@ class StepAddTest {
         // Saisir un email
         onView(withId(R.id.emailEditText))
             .perform( typeText(emailP) )
+            .perform( ViewActions.closeSoftKeyboard() ) // Attention : Le clavier peut géner le clic sur "Enregistrer"
     }
 
     @When("je clique sur enregistrer")
     fun jeCliqueSurEnregistrer() {
         // Clic sur le bouton d'enregistrement
+
         onView(withId(R.id.saveFab))
             .perform( click() )
     }
